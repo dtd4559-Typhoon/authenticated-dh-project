@@ -1,0 +1,37 @@
+$ python main.py --mode benchmark
+
+# Measured performance
+
+These are actual local runs; timings vary.
+
+| Bits | Trial | Prime generation (s) | Factorization (s) | Generator search (s) | Authenticated | Secrets match |
+|---|---|---|---|---|---|---|
+| 16 | 1 | 0.000246200 | 0.000003100 | 0.000018000 | Yes | Yes |
+| 16 | 2 | 0.000220500 | 0.000003900 | 0.000017000 | Yes | Yes |
+| 16 | 3 | 0.000274300 | 0.000001800 | 0.000018000 | Yes | Yes |
+| 24 | 1 | 0.000447600 | 0.000004900 | 0.000016400 | Yes | Yes |
+| 24 | 2 | 0.000449300 | 0.000073000 | 0.000078100 | Yes | Yes |
+| 24 | 3 | 0.000428600 | 0.000011400 | 0.000022000 | Yes | Yes |
+| 32 | 1 | 0.000541400 | 0.000276600 | 0.000297800 | Yes | Yes |
+| 32 | 2 | 0.000544000 | 0.000203200 | 0.000226600 | Yes | Yes |
+| 32 | 3 | 0.000897500 | 0.000197900 | 0.000234000 | Yes | Yes |
+
+## Timing variation
+
+Ranges and means below describe these runs, not guaranteed runtimes.
+
+- 16 bits, prime_generation_s: min 0.000220500, mean 0.000247000, max 0.000274300 seconds.
+- 16 bits, factorization_s: min 0.000001800, mean 0.000002933, max 0.000003900 seconds.
+- 16 bits, generator_search_s: min 0.000017000, mean 0.000017667, max 0.000018000 seconds.
+- 24 bits, prime_generation_s: min 0.000428600, mean 0.000441833, max 0.000449300 seconds.
+- 24 bits, factorization_s: min 0.000004900, mean 0.000029767, max 0.000073000 seconds.
+- 24 bits, generator_search_s: min 0.000016400, mean 0.000038833, max 0.000078100 seconds.
+- 32 bits, prime_generation_s: min 0.000541400, mean 0.000660967, max 0.000897500 seconds.
+- 32 bits, factorization_s: min 0.000197900, mean 0.000225900, max 0.000276600 seconds.
+- 32 bits, generator_search_s: min 0.000226600, mean 0.000252800, max 0.000297800 seconds.
+
+Library prime generation varies with random candidates; factorization varies with p - 1; generator search varies with the first passing candidate. Timer resolution, scheduling, and cache effects also matter. This small sample is not a reliable scaling study.
+
+Factorization and generator search are measured as separate stages. The generator function independently recomputes the complete factors for defensive checking, so its duration includes that verification. Bob's independent received-parameter validation occurs in each exchange but is not included in Alice's parameter-generation stage timings.
+
+See environment.json for the exact Python, OS, processor, and dependency versions.

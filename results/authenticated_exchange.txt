@@ -1,0 +1,24 @@
+$ python main.py --mode authenticated
+
+=== SUCCESSFUL AUTHENTICATED EXCHANGE ===
+Requested prime size: 16 bits
+Modulus: generated using library prime generator
+Prime generation (s): 0.000259700
+Factorization (s): 0.000003800
+Generator search (s): 0.000065500
+Public modulus p: 55849
+Modulus bit length: 16
+Distinct factors of p - 1: [2, 3, 13, 179]
+Public generator g: 14
+Public INIT message: {"payload":{"A":41784,"g":14,"initiator":"Alice","message_type":"init","nonce_A":"b733c4f60fdf9379aab0f28aaceffa2884493d11f407dcc1fa33c53c8cc9ef9c","p":55849,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"},"signature":"0a1c9cdf676e8835b570bde8c1afac092f7a1a65e2f967c75059cc3880c84936c6c5779a1a9de30c22b0ee5a36b61e4642a88ef37541a6105cd375619dd6bd0c"}
+Public RESPONSE message: {"payload":{"message_type":"response","transcript":{"A":41784,"B":7792,"g":14,"initiator":"Alice","nonce_A":"b733c4f60fdf9379aab0f28aaceffa2884493d11f407dcc1fa33c53c8cc9ef9c","nonce_B":"09067a9c46833008a8c46c7c65ef2dcb3d0056a0f1623483438a99ecdc1fd42a","p":55849,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"}},"signature":"a768784531e7caf22b614415acf19c46cd582600586e192744ee51d7c1cfb9d533956d7e2a2c9a26f65cb51838bb82d16f001dbd8fe66a124e4b67dc90675901"}
+Public FINISH message: {"payload":{"message_type":"finish","transcript":{"A":41784,"B":7792,"g":14,"initiator":"Alice","nonce_A":"b733c4f60fdf9379aab0f28aaceffa2884493d11f407dcc1fa33c53c8cc9ef9c","nonce_B":"09067a9c46833008a8c46c7c65ef2dcb3d0056a0f1623483438a99ecdc1fd42a","p":55849,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"}},"signature":"c8b59edae10830d221875ab52ab5d3204293be6f789abb945afba1333dab3a5c132b73ecfc60a1931c5e76bce618454021a7bc6387102bf74daf9b1197b7df0c"}
+Received modulus library validation: PASS
+Generator: validated
+Alice initiation signature: VALID
+Bob response signature: VALID
+Alice finish signature: VALID
+Transcript authenticated: YES
+Shared-secret equality in local test: PASS
+Explicit key confirmation: NOT IMPLEMENTED
+Private exponents and shared secret: HIDDEN

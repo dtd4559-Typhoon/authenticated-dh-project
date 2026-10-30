@@ -1,0 +1,23 @@
+$ python main.py --mode authenticated --fixture --debug
+
+=== SUCCESSFUL AUTHENTICATED EXCHANGE ===
+Explicit mathematical test fixture: p=23, g=5
+Public modulus p: 23
+Modulus bit length: 5
+Distinct factors of p - 1: [2, 11]
+Public generator g: 5
+Public INIT message: {"payload":{"A":8,"g":5,"initiator":"Alice","message_type":"init","nonce_A":"bf846e1fbe5de7b1ecbb4a47e89307336cf9f91ca7bb89105421870fe786337f","p":23,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"},"signature":"2e2861716592a90a26ef67a68dd5fcb77b2d93d843339a34d480e7ea5e82ce51dc098ac2b3aa15646a2e4a2f422d146e476dea4d1fc8e42e2128c94e5bc6e80a"}
+Public RESPONSE message: {"payload":{"message_type":"response","transcript":{"A":8,"B":19,"g":5,"initiator":"Alice","nonce_A":"bf846e1fbe5de7b1ecbb4a47e89307336cf9f91ca7bb89105421870fe786337f","nonce_B":"2de50478ea56c8f7e3d75b6a8aead2f344fb4c5acf9f062a17cfbde579ab137a","p":23,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"}},"signature":"00ec6f86c8424694bd78f44710a80173c2feefd39c7e1663394d03cc805897a333884e0cdf18d70057ef0e3fd03473279bfc00b711763e6790389cc152254b04"}
+Public FINISH message: {"payload":{"message_type":"finish","transcript":{"A":8,"B":19,"g":5,"initiator":"Alice","nonce_A":"bf846e1fbe5de7b1ecbb4a47e89307336cf9f91ca7bb89105421870fe786337f","nonce_B":"2de50478ea56c8f7e3d75b6a8aead2f344fb4c5acf9f062a17cfbde579ab137a","p":23,"protocol":"DH-CLASSROOM-AUTH-v1","responder":"Bob"}},"signature":"a7377a14829f27a60ecbe64db06aa3fa0eb5c62ebf32a5c35f331a160f57ffce60d185c73298973ede42b48d90b5c746020c72ee1fab1f3709cfdbc4a93c5702"}
+Received modulus library validation: PASS
+Generator: validated
+Alice initiation signature: VALID
+Bob response signature: VALID
+Alice finish signature: VALID
+Transcript authenticated: YES
+Shared-secret equality in local test: PASS
+Explicit key confirmation: NOT IMPLEMENTED
+Private exponents and shared secret: HIDDEN
+CLASSROOM DEBUG ONLY - not a public network message
+Local Alice shared secret: 2
+Local Bob shared secret: 2

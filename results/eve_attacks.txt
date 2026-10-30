@@ -1,0 +1,15 @@
+$ python main.py --mode attacks
+
+=== UNAUTHENTICATED EVE ATTACK: FIXED CLASSROOM FIXTURE ===
+Public A=8, B=19
+Eve sends E1=10 to Alice and E2=17 to Bob
+CLASSROOM DEBUG ONLY - local fixture secrets, never sent over the network
+Alice local secret: 6; Eve's matching local secret: 6
+Bob local secret: 15; Eve's matching local secret: 15
+Alice and Bob hold different secrets; Eve knows both.
+=== SAME SUBSTITUTION AGAINST AUTHENTICATED VERSION ===
+Eve modified Bob's public value from 19 to 17.
+Bob response signature: INVALID
+Exchange aborted: signature INVALID
+Alice usable secret after rejection: NONE
+Bob abandoned pending state: CLEARED by local coordinator
