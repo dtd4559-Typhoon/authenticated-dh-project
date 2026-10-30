@@ -104,18 +104,6 @@ exchanges. A trusted setup binds each identity to its real signing public key
 before any simulated network message is processed. Incoming messages cannot
 replace those trusted bindings. One session per participant is active at a time.
 
-## Put this project on GitHub later
-
-1. Create your GitHub repository when you are ready.
-2. On the repository page choose **Add file -> Upload files**.
-3. Upload the extracted project contents, including the `tests` and `results`
-   folders, the report, README, and requirements file. Keep the same folder layout.
-4. Review the files and commit the upload.
-
-Upload the files inside the extracted folder, rather than only uploading the ZIP,
-so GitHub can display the code and README. Do not upload `.venv`, `__pycache__`,
-or private key files. No real private keys are saved in this project.
-
 ## References
 
 - [PyCryptodome prime utilities](https://www.pycryptodome.org/src/util/util#module-Crypto.Util.number)
